@@ -1,23 +1,27 @@
 ---
+import { getCollection } from 'astro:content';
 import type { Project } from '@/types';
 import { slugify } from '@/utils/slugify';
+
+
+const allChallenges = await getCollection('reactChallenges');
 
 
 interface Props {
     entries: Project[];
 }
 
-const {entries = []} = Astro.props;
+// const {entries = []} = Astro.props;
 ---
 
 
 
 <section>
     <ul class="list-decimal">
-{entries.map(({name, description}) => {
+{allChallenges.map(({data}) => {
     return (
         <li>
-            <a class="font-bold text-blue-500" href={`/projects/${slugify(name)}`}>{name}</a> - {description}
+            <a class="font-bold text-blue-500" href={`/projects/${slugify(data.name)}`}>{data.name}</a> - {data.description}
         </li>
     )
 })}
