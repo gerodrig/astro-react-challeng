@@ -1,23 +1,24 @@
 ---
-import "/src/styles/global.css";
 // Component Imports
-import Counter from '@/components/Counter';
-import MainLayout from '@/layouts/MainLayout.astro';
-const someProps = {
-	count: 2,
-};
 
+import MainLayout from "@/layouts/MainLayout.astro";
+import Menu from "@/components/astro/Menu.astro";
+
+import projectsData from '@/data/projects.json';
+import type {Project} from '@/types';
+
+
+const projects = projectsData as Project[];
+
+console.log(projects);
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
 
 <MainLayout>
 	<main>
-		<Counter {...someProps} client:visible>
-			<h1>Hello, React!</h1>
-		</Counter>
+		<Menu entries={projects} />
 	</main>
-
 
 </MainLayout>
 	

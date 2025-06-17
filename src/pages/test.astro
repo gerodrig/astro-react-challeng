@@ -1,0 +1,13 @@
+---
+import { getCollection, render } from 'astro:content';
+import MainLayout from '@/layouts/MainLayout.astro';
+
+
+const allChallenges = await getCollection('reactChallenges');
+
+const {Content} = await render(allChallenges[0])
+---
+
+<MainLayout>
+    <Content />
+</MainLayout>

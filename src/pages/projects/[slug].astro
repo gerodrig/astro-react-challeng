@@ -1,0 +1,31 @@
+---
+import type { GetStaticPaths } from "astro";
+
+import projectsData from '@/data/projects.json';
+import { slugify } from '@/utils/slugify';
+import MainLayout from "@/layouts/MainLayout.astro";
+
+export const getStaticPaths = (async() => {
+    
+    return projectsData.map(({name, componentName }) => {
+        
+        return {
+            params: {
+                slug: slugify(name)
+            },
+            props: {componentName}
+        }
+    })
+}) satisfies GetStaticPaths;
+
+const {slug} = Astro.params;
+const {componentName: ReactComponent} = Astro.props;
+
+
+---
+
+<MainLayout>
+    <h1>{slug}</h1>
+
+    <pre>{ReactComponent}</pre>
+</MainLayout>

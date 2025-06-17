@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Calculator 🔢",
+    "description": "Build a functional calculator with basic operations",
+    "componentName": "Calculator"
+  },
+  {
+    "name": "Connect Four 🔴",
+    "description": "Create the classic two-player connection game",
+    "componentName": "ConnectFour"
+  },
+  {
+    "name": "Dice 🎲",
+    "description": "Build a simple dice rolling simulator",
+    "componentName": "Dice"
+  },
+  {
+    "name": "Expense Tracker 💰",
+    "description": "Create a basic expense tracking application",
+    "componentName": "ExpenseTracker"
+  },
+  {
+    "name": "Gradient Generator 🎨",
+    "description": "Build a customizable gradient generator",
+    "componentName": "GradientGenerator"
+  },
+  {
+    "name": "Hangman 🎯",
+    "description": "Implement the classic word guessing game",
+    "componentName": "Hangman"
+  },
+  {
+    "name": "Tower of Hanoi 🗼",
+    "description": "Implement the classic Tower of Hanoi puzzle game",
+    "componentName": "TowerOfHanoi"
+  },
+  {
+    "name": "Histogram 📊",
+    "description": "Create a dynamic bar chart visualization",
+    "componentName": "Histogram"
+  },
+  {
+    "name": "Memory Game 🎴",
+    "description": "Build a card-matching memory game",
+    "componentName": "MemoryGame"
+  },
+  {
+    "name": "Quiz ❓",
+    "description": "Build an interactive quiz with scoring",
+    "componentName": "Quiz"
+  },
+  {
+    "name": "Quote Generator 💭",
+    "description": "Create a random quote generator",
+    "componentName": "QuoteGenerator"
+  },
+  {
+    "name": "Rock Paper Scissors ✂️",
+    "description": "Build the classic hand game",
+    "componentName": "RockPaperScissors"
+  },
+  {
+    "name": "Simon Says 🎮",
+    "description": "Create the classic memory skill game",
+    "componentName": "SimonSays"
+  },
+  {
+    "name": "Speed Typing ⌨️",
+    "description": "Build a typing speed test application",
+    "componentName": "SpeedTyping"
+  },
+  {
+    "name": "Split View ↔️",
+    "description": "Build a resizable split pane interface",
+    "componentName": "SplitView"
+  },
+  {
+    "name": "Stopwatch ⏱️",
+    "description": "Create a timer with start, stop, and reset",
+    "componentName": "Stopwatch"
+  },
+  {
+    "name": "Tic Tac Toe ⭕",
+    "description": "Implement the classic game with win detection",
+    "componentName": "TicTacToe"
+  },
+  {
+    "name": "Traffic Light 🚦",
+    "description": "Create an animated traffic light simulator",
+    "componentName": "TrafficLight"
+  },
+  {
+    "name": "Tree Visualization 🌳",
+    "description": "Render a hierarchical tree structure",
+    "componentName": "TreeVisualization"
+  },
+  {
+    "name": "Whack-a-Mole 🔨",
+    "description": "Build the classic arcade game",
+    "componentName": "WhackAMole"
+  }
+]

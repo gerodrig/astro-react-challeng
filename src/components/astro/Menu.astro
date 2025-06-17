@@ -1,0 +1,26 @@
+---
+import type { Project } from '@/types';
+import { slugify } from '@/utils/slugify';
+
+
+interface Props {
+    entries: Project[];
+}
+
+const {entries = []} = Astro.props;
+---
+
+
+
+<section>
+    <ul class="list-decimal">
+{entries.map(({name, description}) => {
+    return (
+        <li>
+            <a class="font-bold text-blue-500" href={`/projects/${slugify(name)}`}>{name}</a> - {description}
+        </li>
+    )
+})}
+   
+    </ul>
+</section>
