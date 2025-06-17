@@ -1,0 +1,23 @@
+---
+import "/src/styles/global.css";
+// Component Imports
+import Counter from '@/components/Counter';
+import MainLayout from '@/layouts/MainLayout.astro';
+const someProps = {
+	count: 2,
+};
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/basics/astro-components/
+---
+
+<MainLayout>
+	<main>
+		<Counter {...someProps} client:visible>
+			<h1>Hello, React!</h1>
+		</Counter>
+	</main>
+
+
+</MainLayout>
+	
