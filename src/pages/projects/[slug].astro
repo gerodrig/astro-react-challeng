@@ -1,31 +1,33 @@
 ---
 import type { GetStaticPaths } from "astro";
+import { getCollection, render } from "astro:content";
 
-import projectsData from '@/data/projects.json';
-import { slugify } from '@/utils/slugify';
+import { slugify } from "@/utils/slugify";
 import MainLayout from "@/layouts/MainLayout.astro";
 
-export const getStaticPaths = (async() => {
-    
-    return projectsData.map(({name, componentName }) => {
-        
+export const getStaticPaths = (async () => {
+    const allChallenges = await getCollection("reactChallenges");
+    return allChallenges.map((challenge) => {
+        const { name } = challenge.data;
         return {
             params: {
-                slug: slugify(name)
+                slug: slugify(name),
             },
-            props: {componentName}
-        }
-    })
+            props: { challenge },
+        };
+    });
 }) satisfies GetStaticPaths;
 
-const {slug} = Astro.params;
-const {componentName: ReactComponent} = Astro.props;
-
-
+const { challenge } = Astro.props;
+const { Content } = await render(challenge);
 ---
 
-<MainLayout>
-    <h1>{slug}</h1>
-
-    <pre>{ReactComponent}</pre>
+<MainLayout title={`React Challenge ${challenge.data.name}`}>
+    <div class="top-0 fixed">
+        <a class="text-blue-500 hover:underline" href="/"> {"<-"} Return to projects</a>
+    </div>
+    <div class="text-center text-2xl font-bold mb-5">
+        <h1>{challenge.data.name}</h1>
+    </div>
+    <Content />
 </MainLayout>

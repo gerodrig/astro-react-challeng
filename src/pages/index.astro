@@ -1,23 +1,19 @@
 ---
 // Component Imports
+import { getCollection } from "astro:content";
 
 import MainLayout from "@/layouts/MainLayout.astro";
 import Menu from "@/components/astro/Menu.astro";
 
-import projectsData from '@/data/projects.json';
-import type {Project} from '@/types';
+const allChallenges = await getCollection("reactChallenges");
 
-
-const projects = projectsData as Project[];
-
-console.log(projects);
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
 
 <MainLayout>
 	<main>
-		<Menu entries={projects} />
+		<Menu entries={allChallenges} />
 	</main>
 
 </MainLayout>

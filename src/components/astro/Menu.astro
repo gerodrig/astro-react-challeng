@@ -1,30 +1,30 @@
 ---
-import { getCollection } from 'astro:content';
-import type { Project } from '@/types';
-import { slugify } from '@/utils/slugify';
-
-
-const allChallenges = await getCollection('reactChallenges');
-
+import { slugify } from "@/utils/slugify";
+import type { Challenges } from "@/types";
 
 interface Props {
-    entries: Project[];
+    entries: Challenges[];
 }
 
-// const {entries = []} = Astro.props;
+const {entries = []} = Astro.props;
 ---
-
-
 
 <section>
     <ul class="list-decimal">
-{allChallenges.map(({data}) => {
-    return (
-        <li>
-            <a class="font-bold text-blue-500" href={`/projects/${slugify(data.name)}`}>{data.name}</a> - {data.description}
-        </li>
-    )
-})}
-   
+        {
+            entries.map(({ data }) => {
+                return (
+                    <li>
+                        <a
+                            class="font-bold text-blue-500"
+                            href={`/projects/${slugify(data.name)}`}
+                        >
+                            {data.name}
+                        </a>{" "}
+                        - {data.description}
+                    </li>
+                );
+            })
+        }
     </ul>
 </section>
